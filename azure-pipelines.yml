@@ -31,9 +31,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
+    
 
-- task: SonarQubePreBuild@1
+- task: PublishBuildArtifacts@1
   inputs:
-    projectKey: 'dotnet-rojectspecflow'
-    projectName: 'dotnet-rojectspecflow'
-    projectVersion: '1.0'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
