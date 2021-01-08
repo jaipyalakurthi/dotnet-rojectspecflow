@@ -32,7 +32,8 @@ steps:
   inputs:
     command: 'test'
 
-- task: PublishCodeCoverageResults@1
+- task: SonarQubePreBuild@1
   inputs:
-    codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: 
+    projectKey: 'dotnet-rojectspecflow'
+    projectName: 'dotnet-rojectspecflow'
+    projectVersion: '1.0'
